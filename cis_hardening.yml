@@ -12,4 +12,5 @@
         block_blacklisted: true
         sshd_admin_net:
           - 192.168.2.0/24
+          - 192.168.105.0/24
         suid_sgid_permissions: false
