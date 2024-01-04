@@ -5,12 +5,18 @@
       debug:
         msg: "Hello World!"
 
-#    - name: Include the hardening role
-#      ansible.builtin.include_role:
-#        name: konstruktoid.hardening
-#      vars:
-#        block_blacklisted: true
-#        sshd_admin_net:
-#          - 192.168.2.0/24
-#          - 192.168.105.0/24
-#        suid_sgid_permissions: false
+    - name: Include the hardening role
+      ansible.builtin.include_role:
+        name: konstruktoid.hardening
+      vars:
+        block_blacklisted: true
+        sshd_admin_net:
+          - 193.138.215.43/32
+          - 85.5.197.193/32
+        suid_sgid_permissions: false
+        dns: 213.133.100.102 213.239.204.242 193.47.99.4
+        fallback_dns: 9.9.9.9 1.0.0.1
+        disable_ipv6: true
+        disable_wireless: true
+        login_defs:
+          pass_max_days: 3650
